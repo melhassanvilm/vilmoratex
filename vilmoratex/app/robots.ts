@@ -1,0 +1,18 @@
+export const dynamic = "force-static";
+
+import type { MetadataRoute } from "next";
+import { siteConfig } from "@/lib/site-config";
+
+export default function robots(): MetadataRoute.Robots {
+  return {
+    rules: [
+      {
+        userAgent: "*",
+        allow: "/",
+        disallow: ["/cart", "/checkout", "/checkout/thank-you", "/wishlist"],
+      },
+    ],
+    sitemap: `${siteConfig.url}/sitemap.xml`,
+    host: siteConfig.url,
+  };
+}
