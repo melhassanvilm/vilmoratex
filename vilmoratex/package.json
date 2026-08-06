@@ -26,7 +26,7 @@
     "prettier": "^3.9.6",
     "tailwindcss": "4.3.3",
     "typescript": "5.7.2",
-    "@opennextjs/cloudflare": "..."
+    "@opennextjs/cloudflare": "...",
 
  
   }
