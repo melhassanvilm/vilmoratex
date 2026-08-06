@@ -1,10 +1,14 @@
-import Link from "next/link";
+"use client";
+
+import Link from "@/components/LocaleLink";
 import JsonLd from "./JsonLd";
 import { siteConfig } from "@/lib/site-config";
+import { useLocale } from "./LocaleProvider";
 
 export type Crumb = { label: string; href?: string };
 
 export default function Breadcrumbs({ items }: { items: Crumb[] }) {
+  const { lang } = useLocale();
   return (
     <>
       <JsonLd
@@ -19,7 +23,10 @@ export default function Breadcrumbs({ items }: { items: Crumb[] }) {
           })),
         }}
       />
-      <nav aria-label="Breadcrumb" className="container-page py-4 text-sm text-brand-charcoal/60">
+      <nav
+        aria-label={lang === "ar" ? "مسار التصفح" : "Breadcrumb"}
+        className="container-page py-4 text-sm text-brand-charcoal/60"
+      >
         <ol className="flex flex-wrap items-center gap-1">
           {items.map((item, idx) => (
             <li key={idx} className="flex items-center gap-1">

@@ -1,6 +1,9 @@
 "use client";
 
+import { useLocale } from "./LocaleProvider";
+
 export default function ShareButtons({ title, url }: { title: string; url: string }) {
+  const { lang } = useLocale();
   const links = [
     {
       label: "WhatsApp",
@@ -18,7 +21,7 @@ export default function ShareButtons({ title, url }: { title: string; url: strin
 
   return (
     <div className="flex items-center gap-2">
-      <span className="text-sm text-brand-charcoal/60">Share:</span>
+      <span className="text-sm text-brand-charcoal/60">{lang === "ar" ? "مشاركة:" : "Share:"}</span>
       {links.map((l) => (
         <a
           key={l.label}

@@ -1,55 +1,25 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+import Link from "@/components/LocaleLink";
 import { useEffect, useState } from "react";
+import { useLocale } from "./LocaleProvider";
 
-type Slide = {
-  image: string;
-  eyebrow: string;
-  title: string;
-  description: string;
-  ctaLabel: string;
-  ctaHref: string;
-};
-
-const slides: Slide[] = [
-  {
-    image: "https://picsum.photos/seed/vilmora-hero-1/1800/1000",
-    eyebrow: "Summer Collection",
-    title: "Fashion made for Egyptian summers",
-    description:
-      "Breathable fabrics, refined silhouettes, and factory-direct pricing — from everyday dresses to statement pieces.",
-    ctaLabel: "Shop the Collection",
-    ctaHref: "/categories/summer-dresses",
-  },
-  {
-    image: "https://picsum.photos/seed/vilmora-hero-2/1800/1000",
-    eyebrow: "Manufacturing & Wholesale",
-    title: "Your uniforms, manufactured to spec",
-    description:
-      "From school pinafores to hospital scrubs, we manufacture full uniform programs sized and priced to your exact fabric and quantity needs.",
-    ctaLabel: "Explore Uniform Solutions",
-    ctaHref: "/uniforms",
-  },
-  {
-    image: "https://picsum.photos/seed/vilmora-hero-3/1800/1000",
-    eyebrow: "Private Label & OEM",
-    title: "Launch your brand with our factory",
-    description:
-      "Sample fast, produce at scale, and ship under your own label — with transparent minimums and lead times.",
-    ctaLabel: "Start Private Label",
-    ctaHref: "/private-label",
-  },
+const slideImages = [
+  "https://picsum.photos/seed/vilmora-hero-1/1800/1000",
+  "https://picsum.photos/seed/vilmora-hero-2/1800/1000",
+  "https://picsum.photos/seed/vilmora-hero-3/1800/1000",
 ];
 
 export default function Hero() {
+  const { dict } = useLocale();
+  const slides = dict.homepage.hero.slides;
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
     const id = setInterval(() => setIndex((i) => (i + 1) % slides.length), 6000);
     return () => clearInterval(id);
-  }, []);
+  }, [slides.length]);
 
   const slide = slides[index];
 
@@ -57,14 +27,14 @@ export default function Hero() {
     <section className="relative h-[80vh] min-h-[520px] w-full overflow-hidden bg-brand-plum-dark">
       {slides.map((s, i) => (
         <div
-          key={s.image}
+          key={s.title}
           className={`absolute inset-0 transition-opacity duration-1000 ${
             i === index ? "opacity-100" : "opacity-0"
           }`}
           aria-hidden={i !== index}
         >
           <Image
-            src={s.image}
+            src={slideImages[i % slideImages.length]}
             alt={s.title}
             fill
             priority={i === 0}
@@ -95,7 +65,7 @@ export default function Hero() {
               href="/quote"
               className="rounded-full border border-brand-cream/40 px-7 py-3 text-sm font-semibold text-brand-cream transition-colors hover:bg-brand-cream/10"
             >
-              Request a Quote
+              {dict.homepage.hero.requestQuote}
             </Link>
           </div>
         </div>
@@ -104,8 +74,8 @@ export default function Hero() {
       <div className="absolute bottom-6 left-1/2 flex -translate-x-1/2 gap-2">
         {slides.map((s, i) => (
           <button
-            key={s.image}
-            aria-label={`Show slide ${i + 1}`}
+            key={s.title}
+            aria-label={`${i + 1}`}
             onClick={() => setIndex(i)}
             className={`h-1.5 rounded-full transition-all ${
               i === index ? "w-8 bg-brand-gold" : "w-3 bg-brand-cream/40"

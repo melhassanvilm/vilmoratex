@@ -2,8 +2,10 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { useLocale } from "./LocaleProvider";
 
 export default function ProductGallery({ images, name }: { images: string[]; name: string }) {
+  const { lang } = useLocale();
   const [active, setActive] = useState(0);
   const [zoomed, setZoomed] = useState(false);
   const [origin, setOrigin] = useState("50% 50%");
@@ -37,7 +39,7 @@ export default function ProductGallery({ images, name }: { images: string[]; nam
             <button
               key={src}
               onClick={() => setActive(i)}
-              aria-label={`Show image ${i + 1}`}
+              aria-label={lang === "ar" ? `عرض الصورة ${i + 1}` : `Show image ${i + 1}`}
               className={`relative h-20 w-16 flex-shrink-0 overflow-hidden rounded-lg border-2 ${
                 active === i ? "border-brand-plum" : "border-transparent"
               }`}

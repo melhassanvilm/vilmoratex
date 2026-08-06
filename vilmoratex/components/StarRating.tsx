@@ -1,8 +1,14 @@
+"use client";
+
+import { useLocale } from "./LocaleProvider";
+
 export default function StarRating({ rating, count }: { rating: number; count?: number }) {
+  const { lang } = useLocale();
   const full = Math.floor(rating);
   const hasHalf = rating - full >= 0.5;
+  const label = lang === "ar" ? `تقييم ${rating} من 5` : `Rated ${rating} out of 5`;
   return (
-    <div className="flex items-center gap-1" role="img" aria-label={`Rated ${rating} out of 5`}>
+    <div className="flex items-center gap-1" role="img" aria-label={label}>
       <div className="flex text-brand-gold">
         {Array.from({ length: 5 }).map((_, i) => {
           const filled = i < full || (i === full && hasHalf);

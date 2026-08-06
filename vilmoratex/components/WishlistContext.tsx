@@ -18,6 +18,7 @@ export function WishlistProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     try {
       const raw = window.localStorage.getItem(STORAGE_KEY);
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- one-time hydration from localStorage after mount, required to avoid an SSR/client markup mismatch
       if (raw) setSlugs(JSON.parse(raw));
     } catch {
       // ignore

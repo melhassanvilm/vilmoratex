@@ -1,0 +1,133 @@
+{
+  "shopPage": {
+    "eyebrow": "Shop",
+    "title": "All Products",
+    "description": "Search and filter our full catalog."
+  },
+  "categoriesPage": {
+    "eyebrow": "Browse",
+    "title": "All Categories"
+  },
+  "categoryPage": {
+    "eyebrow": "Category",
+    "comingSoon": "We're preparing this collection — contact us for custom orders in this category."
+  },
+  "collectionsPage": {
+    "eyebrow": "Curated",
+    "title": "Collections",
+    "description": "Seasonal edits and themed collections pulled from across our full catalog."
+  },
+  "searchPage": {
+    "eyebrow": "Search",
+    "startTyping": "Enter a keyword above to search our catalog.",
+    "title": "Search Results"
+  },
+  "galleryPage": {
+    "eyebrow": "Gallery",
+    "title": "Our Collections & Factory Floor",
+    "description": "A look at our fashion collections, uniform programs, and the production process behind every piece."
+  },
+  "videoGalleryPage": {
+    "eyebrow": "Watch",
+    "title": "Video Gallery",
+    "description": "See our factory floor, manufacturing process, and collections in motion.",
+    "emptyState": "New factory and product videos are on the way — check back soon, or ask us for a personal walkthrough.",
+    "emptyStateCta": "Request a Factory Tour Video on WhatsApp"
+  },
+  "blogPage": {
+    "eyebrow": "Insights",
+    "title": "The VilmoraTex Blog",
+    "description": "Manufacturing insights, fabric guides, and industry notes from the VilmoraTex team.",
+    "moreFromBlog": "More from the blog"
+  },
+  "faqPage": {
+    "eyebrow": "Support",
+    "title": "Frequently Asked Questions",
+    "description": "Answers to common questions about VilmoraTex products, ordering, payment, manufacturing, and wholesale services.",
+    "faqs": [
+      {
+        "question": "What payment methods do you accept?",
+        "answer": "Currently we accept cash payment and cash on delivery (COD) only. Bank transfer and online payment (Visa/Mastercard) are coming soon."
+      },
+      {
+        "question": "Do you ship across Egypt?",
+        "answer": "Yes, we deliver across Egypt with cash on delivery. For bulk and wholesale orders, delivery is scheduled directly with our logistics team."
+      },
+      {
+        "question": "Can I order custom sizes or colors?",
+        "answer": "Yes. Many of our styles support custom sizing and colorways for bulk and private label orders — contact us or submit a quote request with your requirements."
+      },
+      {
+        "question": "What is the minimum order quantity (MOQ) for wholesale?",
+        "answer": "MOQs vary by product and category, typically starting around 20–100 pieces per style, with uniform programs sized to your institution."
+      },
+      {
+        "question": "How long does production take?",
+        "answer": "Lead time depends on the product, quantity, and whether fabric is already in stock. Most bulk orders are confirmed with a lead time once your quote is finalized."
+      },
+      {
+        "question": "Do you manufacture school uniforms for a specific age range?",
+        "answer": "Yes, our school uniform programs are sized from age 4 through 16, with fabric consumption calculated separately for each age band to keep pricing accurate."
+      },
+      {
+        "question": "Can I visit the factory?",
+        "answer": "Wholesale and institutional clients are welcome to arrange a factory visit — reach out via WhatsApp or our contact form to schedule one."
+      },
+      {
+        "question": "Do you offer international shipping?",
+        "answer": "We support export documentation and logistics for international wholesale and private label clients — contact us to discuss your destination country."
+      }
+    ]
+  },
+  "contactPage": {
+    "eyebrow": "Get in Touch",
+    "title": "Contact Us",
+    "description": "Have a question about an order, a bulk quote, or a custom manufacturing project? Reach us any of the ways below.",
+    "whatsapp": "WhatsApp",
+    "email": "Email",
+    "businessHours": "Business Hours",
+    "address": "Address",
+    "followUs": "Follow Us",
+    "sendMessage": "Send Us a Message",
+    "mapTitle": "VilmoraTex location map"
+  },
+  "aboutPage": {
+    "eyebrow": "About VilmoraTex",
+    "title": "Fashion and uniforms, manufactured with intent",
+    "para1": "VilmoraTex Trading & Industry is an Egyptian garment manufacturer and wholesale supplier. We produce fashion apparel — dresses, menswear, kidswear, abayas, and pajamas — alongside a full range of professional uniforms for schools, hospitals, hotels, restaurants, factories, and corporate teams.",
+    "para2": "What sets us apart is control: every stage of production, from fabric sourcing and pattern-making to cutting, sewing, embroidery, and printing, happens inside our own facility. That means tighter quality control, faster sample turnaround, and pricing that reflects real production cost rather than a chain of subcontractor markups.",
+    "para3": "We work with two kinds of clients side by side: individual shoppers buying directly through this site, and business clients — schools, hospitals, hotels, restaurants, and boutique brands — ordering in bulk or under private label.",
+    "factoryEyebrow": "Our Factory",
+    "factoryTitle": "Built for consistency at scale",
+    "factoryFeatures": [
+      {
+        "title": "Cutting & Pattern Making",
+        "desc": "In-house pattern development and precision cutting keep sizing consistent across every batch."
+      },
+      {
+        "title": "Sewing & Finishing",
+        "desc": "Skilled sewing lines and a dedicated quality-control step before any order leaves the floor."
+      },
+      {
+        "title": "Embroidery & Printing",
+        "desc": "In-house embroidery and printing stations for branded uniforms and custom apparel runs."
+      }
+    ],
+    "journeyEyebrow": "Our Journey",
+    "journeyTitle": "Milestones",
+    "milestones": [
+      {
+        "year": "Founded",
+        "label": "Established as a garment manufacturing workshop in Greater Cairo."
+      },
+      {
+        "year": "Expansion",
+        "label": "Scaled production to serve schools, hospitals, and hospitality clients across Egypt."
+      },
+      {
+        "year": "Today",
+        "label": "Full in-house cutting, sewing, embroidery, and printing capacity, serving retail and wholesale clients."
+      }
+    ]
+  }
+}

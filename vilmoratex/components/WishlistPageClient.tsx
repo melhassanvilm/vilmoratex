@@ -1,23 +1,25 @@
 "use client";
 
-import Link from "next/link";
+import Link from "@/components/LocaleLink";
 import { useWishlist } from "./WishlistContext";
 import { products } from "@/lib/products";
 import ProductCard from "./ProductCard";
+import { useLocale } from "./LocaleProvider";
 
 export default function WishlistPageClient() {
+  const { dict } = useLocale();
   const { slugs } = useWishlist();
   const items = products.filter((p) => slugs.includes(p.slug));
 
   if (items.length === 0) {
     return (
       <div className="rounded-2xl border border-dashed border-brand-plum/20 p-16 text-center">
-        <p className="text-brand-charcoal/70">You haven&apos;t saved any products yet.</p>
+        <p className="text-brand-charcoal/70">{dict.common.wishlist.empty}</p>
         <Link
           href="/shop"
           className="mt-5 inline-block rounded-full bg-brand-plum px-6 py-3 text-sm font-semibold text-white transition-transform hover:scale-105"
         >
-          Browse Shop
+          {dict.common.buttons.browseShop}
         </Link>
       </div>
     );

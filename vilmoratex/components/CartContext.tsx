@@ -16,7 +16,12 @@ type CartContextValue = {
   items: CartItem[];
   addItem: (item: CartItem) => void;
   removeItem: (slug: string, size?: string, color?: string) => void;
-  updateQty: (slug: string, size: string | undefined, color: string | undefined, qty: number) => void;
+  updateQty: (
+    slug: string,
+    size: string | undefined,
+    color: string | undefined,
+    qty: number
+  ) => void;
   clear: () => void;
   subtotal: number;
   count: number;
@@ -36,6 +41,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     try {
       const raw = window.localStorage.getItem(STORAGE_KEY);
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- one-time hydration from localStorage after mount, required to avoid an SSR/client markup mismatch
       if (raw) setItems(JSON.parse(raw));
     } catch {
       // ignore corrupt storage
@@ -64,7 +70,12 @@ export function CartProvider({ children }: { children: ReactNode }) {
     setItems((prev) => prev.filter((p) => !sameLine(p, slug, size, color)));
   };
 
-  const updateQty = (slug: string, size: string | undefined, color: string | undefined, qty: number) => {
+  const updateQty = (
+    slug: string,
+    size: string | undefined,
+    color: string | undefined,
+    qty: number
+  ) => {
     setItems((prev) =>
       prev.map((p) => (sameLine(p, slug, size, color) ? { ...p, qty: Math.max(1, qty) } : p))
     );
